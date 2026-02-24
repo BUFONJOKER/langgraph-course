@@ -1,7 +1,7 @@
 from langgraph.graph import StateGraph, state, START, END
-from .bmi_state_class_02 import BMIState
-from .bmi_calculate_03 import bmi_calculate
-from .label_bmi_04 import label_bmi
+from .bmi_state_class import BMIState
+from .bmi_calculate import bmi_calculate
+from .label_bmi import label_bmi
 
 graph = StateGraph(state_schema=BMIState)
 

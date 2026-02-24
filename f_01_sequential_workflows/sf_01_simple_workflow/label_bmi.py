@@ -1,4 +1,4 @@
-from .bmi_state_class_02 import BMIState
+from .bmi_state_class import BMIState
 
 def label_bmi(state:BMIState) -> BMIState:
     bmi = state['bmi']
