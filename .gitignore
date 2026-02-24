@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+# also ignore the .env file if it exists
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
