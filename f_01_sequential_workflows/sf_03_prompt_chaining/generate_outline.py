@@ -1,6 +1,9 @@
 from blog_state import BlogState
 
 def generate_outline(state: BlogState) -> BlogState:
+    '''
+    generate outline of a blog from a given topic from llm and return state object with blog outline \n 
+    '''
 
     topic = state['topic']
 

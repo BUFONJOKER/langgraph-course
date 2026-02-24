@@ -1,6 +1,9 @@
 from blog_state import BlogState
 
 def generate_blog(state: BlogState) -> BlogState:
+    '''
+    Generate a detailed blog from a given topic and outline and return a state object with complete blog
+    '''
 
     topic = state['topic']
 

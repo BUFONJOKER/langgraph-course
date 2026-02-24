@@ -1,6 +1,9 @@
 from blog_state import BlogState
 
 def evaluation(state: BlogState) -> BlogState:
+    '''
+    Evaluate a blog using outline and blog and rate on scale of 10 and generate a short review and return state object with evaluation as string
+    '''
 
     outline = state['blog_outline']
 
