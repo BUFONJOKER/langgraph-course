@@ -19,3 +19,4 @@ def boundary_percent(state: BatsmenState) -> dict:
     output = {"boundary_percent": round(result, 2)}
 
     return output
+    
