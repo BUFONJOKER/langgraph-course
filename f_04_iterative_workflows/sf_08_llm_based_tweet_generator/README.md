@@ -87,7 +87,7 @@ The workflow maintains a `TweetState` with:
 
 ## 🚀 Usage
 
-### Option 1: Streamlit Web Interface
+### Streamlit Web Interface
 ```bash
 streamlit run main.py
 ```
@@ -95,28 +95,12 @@ streamlit run main.py
 - Click generate to start the workflow
 - View tweet improvements across iterations
 
-### Option 2: Jupyter Notebook
-Open `main.ipynb` and run cells:
-```python
-from main import workflow, model, structured_model
-
-input_state = {
-    'topic': 'Data science',
-    'model': model,
-    'structured_model': structured_model,
-    'iteration': 0,
-    'max_iterations': 5
-}
-
-result = workflow.invoke(input_state)
-```
-
 ---
 
 ## 📊 Models Used
 
-- **Generator**: `meta-llama/Llama-3.1-8B-Instruct` (HuggingFace)
-- **Evaluator**: Ollama local model with structured output
+- **Generator**: `zai-org/GLM-4.7-Flash` (HuggingFace)
+- **Evaluator**: Ollama `qwen3-next:80b-cloud` model with structured output
 - Both support iterative refinement and feedback integration
 
 ---
