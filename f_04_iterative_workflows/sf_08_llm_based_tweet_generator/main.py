@@ -60,7 +60,7 @@ if st.button("Generate", type='primary'):
         result = workflow.invoke(input_state)
 
     st.header("Model Used for Generation of Tweet")
-    st.markdown(f"**openai-community/gpt2**")
+    st.markdown(f"**zai-org/GLM-4.7-Flash**")
 
     st.header("Model Used for Evaluation of Tweet")
     st.markdown(f"**Qwen3-next:80b-cloud model**")

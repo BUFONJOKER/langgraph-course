@@ -13,11 +13,11 @@ def load_ollama_model():
 
 def load_huggingface_model():
     '''
-    Load HuggingFace model openai-community/gpt2 for text generation task
+    Load HuggingFace model zai-org/GLM-4.7-Flash for text generation task
     '''
 
     llm = HuggingFaceEndpoint(
-        repo_id = "openai-community/gpt2",
+        repo_id = "zai-org/GLM-4.7-Flash",
         task = "text-generation",
     )
 

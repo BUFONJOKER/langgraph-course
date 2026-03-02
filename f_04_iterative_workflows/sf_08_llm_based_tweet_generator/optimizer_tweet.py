@@ -35,7 +35,7 @@ def optimize(state: TweetState) -> dict:
 
     iteration = state['iteration'] + 1
 
-    return{
+    return {
         "tweet": result.content,
         "tweet_history": [result.content],
         "iteration": iteration
