@@ -1,5 +1,8 @@
 from langchain_ollama import ChatOllama
 from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def load_ollama_model():
     '''
@@ -10,11 +13,11 @@ def load_ollama_model():
 
 def load_huggingface_model():
     '''
-    Load HuggingFace model meta-llama/Llama-3.1-8B-Instruct for text generation task
+    Load HuggingFace model openai-community/gpt2 for text generation task
     '''
 
     llm = HuggingFaceEndpoint(
-        repo_id = "meta-llama/Llama-3.1-8B-Instruct",
+        repo_id = "openai-community/gpt2",
         task = "text-generation",
     )
 

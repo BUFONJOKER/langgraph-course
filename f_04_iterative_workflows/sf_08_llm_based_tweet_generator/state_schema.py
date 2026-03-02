@@ -1,11 +1,15 @@
-from typing import TypedDict, Annotated, List, Literal
+from typing import TypedDict, Annotated, List, Literal, Any
 from pydantic import Field
 import operator
 
 class TweetState(TypedDict):
     '''
-    State schema for the LLM-based tweet generator workflow. This schema captures the topic, generated tweet, evaluation results, feedback, iteration count, and history of generated tweets and feedback.
+    State schema for the LLM-based tweet generator workflow. This schema captures the model, structured model, topic, generated tweet, evaluation results, feedback, iteration count, and history of generated tweets and feedback.
     '''
+
+    model: Any = Field(default=None, description="The LLM model used for generating the tweet")
+
+    structured_model: Any = Field(default=None, description="The structured model used for evaluating the generated tweet")
 
     topic: str = Field(default='', description="The topic for which the tweet is being generated")
 
@@ -20,4 +24,5 @@ class TweetState(TypedDict):
     max_iterations: int = Field(default=5, description="The maximum number of iterations allowed")
 
     tweet_history: Annotated[List[str], operator.add] = Field(default_factory=list, description="History of generated tweets")
+    
     feedback_history: Annotated[List[str], operator.add] = Field(default_factory=list, description="History of feedback provided")
