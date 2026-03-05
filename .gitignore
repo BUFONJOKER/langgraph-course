@@ -15,7 +15,8 @@ wheels/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# add .bin, .db-shm, .db-wal to ignore list
+# add .bin, .db, .db-shm, .db-wal to ignore list
 *.bin
+*.db
 *.db-shm
 *.db-wal
