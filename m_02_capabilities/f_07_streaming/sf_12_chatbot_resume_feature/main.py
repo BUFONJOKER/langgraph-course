@@ -1,11 +1,28 @@
+# ----- Chatbot Application with Conversation Memory using Streamlit and LangGraph -----
+
+
+
 # ============================================================================
-# IMPORTS
+# IMPORT necessary libraries and functions for the chatbot application
 # ============================================================================
 from model import load_model
 from workflow import generate_workflow
 from langchain_core.messages import HumanMessage, AIMessage
 from thread_id import generate_thread_id
+from reset_chat import reset_chat
+from add_thread import add_thread
+from load_conversation import load_conversation
 import streamlit as st
+
+# app icon and title setup
+st.set_page_config(page_title="Chatbot", page_icon="🤖", layout="centered")
+st.title("Chatbot with Conversation Memory")
+
+# ============================================================================
+# INITIALIZE MODEL & WORKFLOW
+# ============================================================================
+model = load_model()
+workflow = generate_workflow()
 
 
 # ============================================================================
@@ -18,22 +35,33 @@ if 'thread_id' not in st.session_state:
 if 'messages' not in st.session_state:
   st.session_state['messages'] = []
 
+if 'chat_threads' not in st.session_state:
+  st.session_state['chat_threads'] = []
+
+add_thread(st.session_state['thread_id'])  # Ensure current thread_id is tracked in session state
 
 # ============================================================================
 # UI SETUP of sidebar and main chat interface
 # ============================================================================
-st.header("Chatbot")
+
 st.sidebar.title('Chatbot')
-st.sidebar.button("New Chat")
 st.sidebar.header("My Conversations")
-st.sidebar.markdown(st.session_state['thread_id'])  # Display current thread_id for demonstration
 
+if st.sidebar.button("New Chat"):
+  reset_chat()  # Clear chat history and generate new thread_id for a fresh conversation
 
-# ============================================================================
-# INITIALIZE MODEL & WORKFLOW
-# ============================================================================
-model = load_model()
-workflow = generate_workflow()
+# display all thread_ids
+for thread_id in st.session_state['chat_threads'][::-1]:  # Show most recent threads at the top
+
+  if st.sidebar.button(thread_id):
+
+    st.session_state['thread_id'] = thread_id  # Update current thread_id to selected one
+    messages = load_conversation(thread_id, workflow)  # Load conversation history for selected thread_id
+
+    # check in messages if it is a HumanMessage or AIMessage and create a new list of messages with the same type but only content for display
+    tmp_message = [type(message)(content=message.content) for message in messages]
+
+    st.session_state['messages'] = tmp_message  # Update session state with loaded messages for display
 
 
 
@@ -44,6 +72,8 @@ for message in st.session_state['messages']:
   role = 'user' if isinstance(message, HumanMessage) else 'assistant'
   with st.chat_message(role):
     st.markdown(message.content)
+
+
 
 
 # ============================================================================
