@@ -1,4 +1,5 @@
-# ----- Chatbot Application with Conversation Memory using Streamlit and LangGraph -----
+# ----- Chatbot Application with Conversation Memory in SQLite Database
+# ----- using Streamlit and LangGraph
 
 
 
@@ -22,7 +23,7 @@ st.title("Chatbot with Conversation Memory")
 # INITIALIZE MODEL & WORKFLOW
 # ============================================================================
 model = load_model()
-workflow = generate_workflow()
+workflow, all_threads = generate_workflow()
 
 
 # ============================================================================
@@ -36,7 +37,7 @@ if 'messages' not in st.session_state:
   st.session_state['messages'] = []
 
 if 'chat_threads' not in st.session_state:
-  st.session_state['chat_threads'] = []
+  st.session_state['chat_threads'] = all_threads  # Initialize with threads from database
 
 add_thread(st.session_state['thread_id'])  # Ensure current thread_id is tracked in session state
 
