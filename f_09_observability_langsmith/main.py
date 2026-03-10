@@ -17,9 +17,10 @@ import streamlit as st
 from dotenv import load_dotenv
 import os
 
-os.environ['LANGSMITH_PROJECT'] = 'ChatbotwithConversationMemory'
+# for tracing with langsmith
+# os.environ['LANGSMITH_PROJECT'] = 'ChatbotwithConversationMemory'
 
-load_dotenv()
+# load_dotenv()
 
 # app icon and title setup
 st.set_page_config(page_title="Chatbot", page_icon="🤖", layout="centered")
@@ -103,7 +104,13 @@ if prompt := st.chat_input("Ask anything to AI assistant"):
       }
 
       # thread_id enables the workflow to access previous messages from memory
-      CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']}}
+      CONFIG = {'configurable':{
+        'thread_id': st.session_state['thread_id']},
+        'metadata': {
+          'thread_id': st.session_state['thread_id'],
+        },
+        'run_name':'chatbot_run'
+      }
 
       # Generator expression filters stream to only AIMessage objects
       # and extracts content for typewriter-style rendering
