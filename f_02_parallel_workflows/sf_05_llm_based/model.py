@@ -1,7 +1,7 @@
 from langchain_ollama import ChatOllama
 from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
 from dotenv import load_dotenv
-load_dotenv()
+# load_dotenv()
 
 def load_model():
     '''
@@ -17,8 +17,3 @@ def load_model():
     # chatbot = ChatHuggingFace(llm=model)
 
     return llm
-
-
-
-
-
