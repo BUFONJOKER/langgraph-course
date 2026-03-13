@@ -7,6 +7,7 @@ requires-python = ">=3.11"
 dependencies = [
     "ddgs>=9.11.2",
     "dotenv>=0.9.9",
+    "fastmcp>=3.1.0",
     "grandalf>=0.8",
     "ipykernel>=7.2.0",
     "ipywidgets>=8.1.8",
@@ -14,6 +15,7 @@ dependencies = [
     "langchain-community>=0.4.1",
     "langchain-core>=1.2.15",
     "langchain-huggingface>=1.2.0",
+    "langchain-mcp-adapters>=0.2.1",
     "langchain-ollama>=1.0.1",
     "langgraph>=1.0.9",
     "langgraph-checkpoint-sqlite>=3.0.3",
