@@ -4,9 +4,9 @@ from generate_embeddings import embeddings
 from retriever import retrieve
 from model import load_embeddings_model, load_model
 
-embeddings_model = load_embeddings_model()
+embeddings_model = load_embeddings_model(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
-model = load_model()
+model = load_model(model_name="qwen3.5:cloud")
 
 file_path = 'intro-to-ml.pdf'
 

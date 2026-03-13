@@ -4,15 +4,15 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def load_model():
-    '''Load the Ollama model for RAG.'''
+def load_model(model_name: str):
+    '''Load the given model from ollama for RAG.'''
 
-    model = ChatOllama(model="qwen3.5:cloud")
+    model = ChatOllama(model=model_name)
 
     return model
 
-def load_embeddings_model():
-    '''Load huggingface sentence transformer model for RAG.'''
+def load_embeddings_model(model_name: str):
+    '''Load given embedding model from huggingface for RAG.'''
 
-    embeddings = HuggingFaceEndpointEmbeddings(model="sentence-transformers/all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEndpointEmbeddings(model=model_name)
     return embeddings
