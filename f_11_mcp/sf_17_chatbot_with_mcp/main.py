@@ -30,7 +30,7 @@ SERVERS = {
 
 client = MultiServerMCPClient(SERVERS)
 
-model = load_huggingface_model()
+model = load_model()
 
 
 async def build_graph():
