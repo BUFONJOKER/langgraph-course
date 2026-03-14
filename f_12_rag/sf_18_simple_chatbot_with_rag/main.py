@@ -12,6 +12,7 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 os.environ["LANGSMITH_PROJECT"] = "simple-chatbot-with-rag"
