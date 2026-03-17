@@ -46,26 +46,28 @@ initial_state = {
     ]
 }
 
-# running multiple times to see the effect of deletion of messages
-workflow.invoke(input={'messages':[('user','what is ai')]}, config=config)
-workflow.invoke(input={'messages':[('user','what is ds')]}, config=config)
-workflow.invoke(input={'messages':[('user','what is cs')]}, config=config)
-workflow.invoke(input={'messages':[('user','what is dl')]}, config=config)
-workflow.invoke(input={'messages':[('user','what is ml')]}, config=config)
-workflow.invoke(input={'messages':[('user','what is api')]}, config=config)
-workflow.invoke(input={'messages':[('user','what is mcp')]}, config=config)
-workflow.invoke(input={'messages':[('user','what is llm')]}, config=config)
-workflow.invoke(input={'messages':[('user','what is nlp')]}, config=config)
-workflow.invoke(input={'messages':[('user','what is gen ai')]}, config=config)
 
-state = workflow.get_state(config)
-msgs = state.values['messages']
-print()
-print(f"Length of messages: {len(msgs)}")
-print()
+if __name__=="__main__":
+    # running multiple times to see the effect of deletion of messages
+    workflow.invoke(input={'messages':[('user','what is ai')]}, config=config)
+    workflow.invoke(input={'messages':[('user','what is ds')]}, config=config)
+    workflow.invoke(input={'messages':[('user','what is cs')]}, config=config)
+    workflow.invoke(input={'messages':[('user','what is dl')]}, config=config)
+    workflow.invoke(input={'messages':[('user','what is ml')]}, config=config)
+    workflow.invoke(input={'messages':[('user','what is api')]}, config=config)
+    workflow.invoke(input={'messages':[('user','what is mcp')]}, config=config)
+    workflow.invoke(input={'messages':[('user','what is llm')]}, config=config)
+    workflow.invoke(input={'messages':[('user','what is nlp')]}, config=config)
+    workflow.invoke(input={'messages':[('user','what is gen ai')]}, config=config)
 
-print(f"All messages")
-
-for i, msg in enumerate(msgs):
-    print(f"Message {i}: {msg.content}")
+    state = workflow.get_state(config)
+    msgs = state.values['messages']
     print()
+    print(f"Length of messages: {len(msgs)}")
+    print()
+
+    print(f"All messages")
+
+    for i, msg in enumerate(msgs):
+        print(f"Message {i}: {msg.content}")
+        print()
