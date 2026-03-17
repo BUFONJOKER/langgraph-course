@@ -1,166 +1,163 @@
 # 🚀 LangGraph Course
 
 ## Summary
-Overview of the LangGraph course repository, module structure, and learning path.
 
+Hands-on LangGraph learning repository covering end-to-end workflow patterns from fundamentals to advanced production-like agent architectures.
 
-Welcome to the LangGraph Course repository! This project explores sequential workflows and advanced orchestration using LangGraph framework.
+## 🎯 Project Overview
 
----
+This repository is organized as a progressive course. Each top-level folder (`f_01` to `f_15`) focuses on one LangGraph concept, and each subfolder (`sf_*`) contains runnable examples with focused code modules.
 
-## 📁 Project Structure
+The goal is to help you move from basic graph execution to advanced agent capabilities such as tool use, retrieval, memory, persistence, observability, human-in-the-loop, and subgraph composition.
 
-### 🏠 Root Directory
+## 🧭 Learning Path (f_01 to f_15)
 
-The root directory contains essential project configuration and entry point files.
+- `f_01_sequential_workflows`: Linear, step-by-step graph execution.
+- `f_02_parallel_workflows`: Fan-out/fan-in parallel branches.
+- `f_03_conditional_workflows`: Branching based on computed or model outputs.
+- `f_04_iterative_workflows`: Loop-based generate-evaluate-refine patterns.
+- `f_05_chatbot_workflows`: Core chatbot state and response flow.
+- `f_06_persistence`: Persisting state between interactions.
+- `f_07_streaming`: Streaming responses from graph-driven chatbots.
+- `f_08_persistence_thread_storage`: Thread-aware conversation persistence and resume.
+- `f_09_observability_langsmith`: Tracing and observability for workflow debugging.
+- `f_10_tools`: Tool-calling fundamentals and chatbot tools integration.
+- `f_11_mcp`: MCP-based tool integration with external capability servers.
+- `f_12_rag`: Retrieval-Augmented Generation pipelines and RAG chatbots.
+- `f_13_human_in_the_loop`: Human checkpoints in autonomous flows.
+- `f_14_subgraphs`: Modular graph composition with reusable subgraphs.
+- `f_15_short_term_memory`: Memory strategies and token-budget handling.
 
-#### 📄 Files
+## 🗺️ Which Folder For What?
 
-- **`main.py`** 📝: Main entry point script for the project
-- **`main.ipynb`** 📓: Jupyter Notebook for interactive exploration and testing
-- **`pyproject.toml`** ⚙️: Python project configuration and dependency management
-- **`README.md`** 📖: Project documentation (this file)
-- **`uv.lock`** 🔒: Dependency lock file for reproducible environments
-- **`.python-version`** 🐍: Python version specification for the project
-- **`.env`** 🔐: Environment variables configuration (not tracked in git)
-- **`.gitignore`** 🚫: Git ignore patterns for version control
-- **`.git/`** 📚: Git repository metadata and history
+- Want to learn basic graph flow? -> `f_01_sequential_workflows`
+- Want parallel branches and merge patterns? -> `f_02_parallel_workflows`
+- Want if/else style routing in graphs? -> `f_03_conditional_workflows`
+- Want generate-evaluate-refine loops? -> `f_04_iterative_workflows`
+- Want to build a basic chatbot? -> `f_05_chatbot_workflows`
+- Want state persistence between turns? -> `f_06_persistence`
+- Want streaming token/event responses? -> `f_07_streaming`
+- Want multi-thread chat resume support? -> `f_08_persistence_thread_storage`
+- Want tracing and observability? -> `f_09_observability_langsmith`
+- Want function/tool calling agents? -> `f_10_tools`
+- Want MCP integration with external tools? -> `f_11_mcp`
+- Want document-grounded RAG chatbots? -> `f_12_rag`
+- Want human approval/control in workflows? -> `f_13_human_in_the_loop`
+- Want reusable graph components? -> `f_14_subgraphs`
+- Want memory trimming and token control? -> `f_15_short_term_memory`
 
-#### 🗂️ Directories
+## 🧭 Which Subfolder For What?
 
-- **`f_01_sequential_workflows/`** ⚙️: Main module containing sequential workflow implementations
+- Want a first simple graph example? -> `sf_01_simple_workflow`
+- Want sequential LLM Q&A flow? -> `sf_02_llm_based_workflows`
+- Want prompt chaining (outline -> draft -> evaluate)? -> `sf_03_prompt_chaining`
+- Want parallel metric calculations? -> `sf_04_simple_workflow`
+- Want parallel LLM evaluation? -> `sf_05_llm_based`
+- Want conditional branching from math/state? -> `sf_06_simple_workflow`
+- Want conditional branching from LLM sentiment? -> `sf_07_llm_based_workflow`
+- Want iterative generation refinement? -> `sf_08_llm_based_tweet_generator`
+- Want a basic chatbot baseline? -> `sf_09_simple_chatbot`
+- Want memory saver persistence? -> `sf_10_simple_memory_saver_based`
+- Want streaming chatbot output? -> `sf_11_chatbot_with_streaming_memory_saver`
+- Want resume-by-thread chat? -> `sf_12_chatbot_resume_feature`
+- Want SQLite checkpoints? -> `sf_13_chatbot_sqlite_checkpoint`
+- Want LangSmith tracing example? -> `sf_14_simple_tracing`
+- Want tool-calling fundamentals? -> `sf_15_fundamentals`
+- Want chatbot with practical tools? -> `sf_16_chatbot_tools`
+- Want MCP-integrated chatbot? -> `sf_17_chatbot_with_mcp`
+- Want simple RAG chatbot? -> `sf_18_simple_chatbot_with_rag`
+- Want RAG + tools + UI helpers? -> `sf_19_chatbot_with_rag_tools_ui`
+- Want human-in-the-loop basic flow? -> `sf_20_simple`
+- Want human-in-the-loop with tools? -> `sf_21_advanced_with_tools`
+- Want simple subgraph composition? -> `sf_22_simple_subgraph`
+- Want shared reusable subgraphs? -> `sf_23_shared_subgraphs`
+- Want short-term memory saver variant? -> `sf_24_with_memory_saver`
+- Want PostgreSQL-backed memory? -> `sf_25_memory_postgres_database`
+- Want token trimming strategy? -> `sf_26_tokens_trimming`
 
----
+## 🏗️ Repository Structure
 
-## 📦 f_01_sequential_workflows
+- `main.py`: Root-level starter script.
+- `main.ipynb`: Root-level notebook for exploration.
+- `pyproject.toml`: Python project metadata and dependencies.
+- `settings.json`: Project settings/configuration.
+- `todo.txt`: Work notes/tasks.
+- `f_*/`: Concept modules.
+- `f_*/sf_*/`: Scenario-level examples.
 
-This folder contains the core implementation of sequential workflows using LangGraph.
+Each module and submodule has its own `README.md` with:
 
-### 📄 Root Module Files
+- A summary of what the folder does.
+- File-by-file explanation.
+- Concept context for that example.
 
-- **`__init__.py`** 💫: Python package initialization file
+## ⚙️ Setup
 
-### 📂 Subfolders
+### Prerequisites
 
-#### 1️⃣ sf_01_simple_workflow
+- Python 3.10+ (recommended)
+- `uv` installed
+- API/model credentials as needed by your selected examples
 
-A simple workflow demonstrating basic sequential operations with BMI (Body Mass Index) calculation.
+### Install Dependencies (uv)
 
-**📄 Files:**
+```bash
+uv sync
+```
 
-- **`main.py`** 🎯: Main workflow orchestration script
-- **`bmi_calculate.py`** 🧮: BMI calculation logic
-- **`bmi_state_class.py`** 📊: State management class for BMI workflow
-- **`label_bmi.py`** 🏷️: BMI classification and labeling logic
-- **`graph.png`** 🖼️: Visual representation of the workflow graph
+### Run Commands With uv
 
----
+Use `uv run` so commands execute in the project environment without manual activation.
 
-#### 2️⃣ sf_02_llm_based_workflows
+```bash
+uv run python --version
+uv run python main.py
+```
 
-LLM-based sequential workflows demonstrating question-answering systems with different model backends.
+## ▶️ How To Run Examples
 
-**📄 Files:**
+Run any module or submodule script directly:
 
-- **`main.py`** 🎯: Main LLM workflow script
-- **`main.ipynb`** 📓: Interactive Jupyter Notebook for LLM workflows
-- **`llm_question_answer.py`** 🤖: Question-answering implementation
-- **`llm_state_class.py`** 📊: State management class for LLM workflows
-- **`model_huggingface.py`** 🤗: Hugging Face model integration
-- **`model_ollama.py`** 🦙: Ollama model integration
-- **`__init__.py`** 💫: Package initialization file
+```bash
+uv run python f_01_sequential_workflows/sf_01_simple_workflow/main.py
+uv run python f_12_rag/sf_18_simple_chatbot_with_rag/main.py
+```
 
----
+Open notebooks for interactive experimentation:
 
-#### 3️⃣ sf_03_prompt_chaining
+```bash
+uv run jupyter notebook
+```
 
-Advanced prompt chaining workflows for blog generation with outline evaluation.
+## 🧠 Core Concepts Implemented
 
-**📄 Files:**
+- State schemas for typed graph state transitions.
+- Node-based graph orchestration patterns.
+- Model abstraction for backend flexibility.
+- Conditional and iterative control flow.
+- Tool invocation loops and agent-style interactions.
+- Retrieval + embedding pipelines for grounded answers.
+- Persistence/checkpoint strategies (memory saver, SQLite, PostgreSQL).
+- Thread-based multi-session conversation management.
+- Tracing/observability integration.
+- Human-in-the-loop checkpoints.
 
-- **`main.py`** 🎯: Main prompt chaining orchestration script
-- **`main.ipynb`** 📓: Interactive Jupyter Notebook for prompt chaining
-- **`blog_state.py`** 📝: State management class for blog generation workflow
-- **`generate_outline.py`** 📋: Outline generation logic
-- **`generate_blog.py`** ✍️: Blog post generation logic
-- **`evaluation.py`** ⭐: Evaluation and validation of generated content
-- **`model.py`** 🔌: Model configuration and initialization
-- **`__init__.py`** 💫: Package initialization file
+## 🔐 Environment and Configuration
 
----
+- Keep secrets in `.env` (do not commit).
+- Configure model providers according to the module you run.
+- Some folders include local DB artifacts (`*.db`, checkpoints) generated during execution.
 
-## 🎯 Key Features
+## 📌 Recommended Study Order
 
-### ✨ Sequential Workflows
-- **Simple Workflows**: Basic workflow operations with BMI calculations
-- **LLM Integration**: Integration with multiple LLM backends (Hugging Face, Ollama)
-- **Prompt Chaining**: Advanced multi-step prompt chains for complex tasks like blog generation
+1. `f_01` -> `f_04` for core graph mechanics.
+2. `f_05` -> `f_09` for chatbot, persistence, streaming, and observability.
+3. `f_10` -> `f_12` for tools, MCP, and RAG.
+4. `f_13` -> `f_15` for human control, subgraphs, and memory optimization.
 
-### 🔄 State Management
-- Structured state classes for each workflow module
-- Type-safe state transitions
-- Efficient state handling across workflow steps
+## ✅ Notes
 
-### 🧠 Model Support
-- Hugging Face models integration
-- Ollama local model support
-- Flexible model configuration
+- Examples are intentionally modular; many patterns are reusable across folders.
+- For folder-specific implementation details, read that folder's `README.md` first.
 
----
-
-## 🛠️ Development Setup
-
-### Requirements
-- Python 3.x
-- Virtual environment (`.venv/`)
-- Dependencies specified in `pyproject.toml`
-
-### Quick Start
-1. Activate the virtual environment: `.venv/Scripts/Activate.ps1`
-2. Run the main script: `python main.py`
-3. Or explore with Jupyter: `jupyter notebook main.ipynb`
-
----
-
-## 📚 Workflow Modules
-
-### Module 1: Simple Workflow
-Calculate and classify BMI values through a sequential workflow.
-
-### Module 2: LLM-Based Workflow
-Ask questions to LLMs and receive answers from different model backends.
-
-### Module 3: Prompt Chaining
-Generate complete blog posts by chaining multiple prompts together with evaluation.
-
----
-
-## 🔧 Configuration
-
-- **`pyproject.toml`**: Manage project dependencies and metadata
-- **`.env`**: Set environment variables and API keys
-- **`.python-version`**: Specify Python version requirement
-
----
-
-## 📔 Interactive Notebooks
-
-Explore the workflows interactively using Jupyter Notebooks:
-- `main.ipynb` (Root level)
-- `sf_02_llm_based_workflows/main.ipynb`
-- `sf_03_prompt_chaining/main.ipynb`
-
----
-
-## 🚀 Getting Started
-
-To get started with this LangGraph course:
-
-1. **Set up environment**: Install dependencies from `pyproject.toml`
-2. **Explore examples**: Start with `sf_01_simple_workflow` for basic concepts
-3. **Try LLM integration**: Move to `sf_02_llm_based_workflows` for model usage
-4. **Master prompt chaining**: Finish with `sf_03_prompt_chaining` for advanced techniques
-
----
-
-**Happy Learning! 🎓**
+Happy learning and building with LangGraph.
