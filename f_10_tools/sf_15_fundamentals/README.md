@@ -1,34 +1,14 @@
-# 🧰 SF 15: Fundamentals
+# 🧰 SF 15: Tool Calling Fundamentals
 
-## 📌 Overview
+## 📌 What This Does
+Introduces tool-enabled chat flow with explicit state, model, and tool wiring.
 
-This folder contains a basic LangGraph tools workflow example. It introduces core building blocks like state, model, tools, and chat node wiring.
+## 🧠 Key Concept
+Model-triggered tool invocation in LangGraph.
 
-## 📂 Files
-
-### 🧠 Core Workflow
-
-- `main.py`: Entry point for the workflow.
-- `state_schema.py`: State definition used across the graph.
-- `chat_node.py`: Chat node logic.
-
-### 🔧 Tooling and Model
-
-- `tools.py`: Tool definitions available to the agent.
-- `model.py`: Model configuration and initialization.
-
-### 🧪 Notebook
-
-- `main.ipynb`: Interactive notebook version of the same flow.
-
-## ▶️ How To Run
-
-### Run Python script
-
-```bash
-python main.py
-```
-
-### Run notebook
-
-Open `main.ipynb` in VS Code and execute cells.
+## 📂 Main Files
+- tools.py
+- chat_node.py
+- state_schema.py
+- model.py
+- main.py

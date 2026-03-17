@@ -1,21 +1,13 @@
-# 😄 Simple Memory Saver Workflow
+# 💾 SF 10: Memory Saver Persistence
 
-## 🎯 Overview
-A minimal LangGraph persistence example that generates a joke and then explains it.
+## 📌 What This Does
+Demonstrates checkpointed workflow execution using memory saver.
 
-## 🔁 Workflow
-`START -> joke -> explanation -> END`
+## 🧠 Key Concept
+Persisting state between turns/runs.
 
-## 🗂️ Files
-### 🚀 Entry Point
-- `main.py`: builds the graph, compiles with `InMemorySaver`, and runs one thread (`thread_id='1'`).
-
-### 🤖 Model
-- `model.py`: loads `ChatOllama` (`qwen3-next:80b-cloud`).
-
-### 🧠 State
-- `state_schema.py`: `JokeState` with `topic`, `joke`, `explanation`, and `model`.
-
-### 🧩 Nodes
-- `generate_joke.py`: creates a joke from the topic.
-- `generate_joke_explanation.py`: explains the generated joke.
+## 📂 Main Files
+- generate_joke.py
+- generate_joke_explanation.py
+- state_schema.py
+- main.py

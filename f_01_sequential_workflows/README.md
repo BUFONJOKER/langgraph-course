@@ -1,129 +1,25 @@
-# 📊 Sequential Workflows
+# 1️⃣ Sequential Workflows
 
-LangGraph workflows demonstrating sequential node execution patterns, from simple calculations to LLM-based applications.
+## 🎯 Concept
+This module introduces sequential graph design in LangGraph, where each node runs in a fixed order and passes state to the next node. It is the best starting point for understanding deterministic workflow orchestration.
 
-## 🎯 Overview
+## 🧠 What You Learn
+- How to model state and pass it through ordered nodes.
+- How to split logic into focused node functions.
+- How to chain LLM and non-LLM steps in a predictable pipeline.
+- How to evaluate and refine outputs step by step.
 
-This module contains three sequential workflow examples that execute nodes one after another in a linear chain:
+## 🧩 Subfolders
+### 🔹 sf_01_simple_workflow
+Basic non-LLM workflow to calculate BMI and assign labels.
 
-```
-START → Node 1 → Node 2 → Node 3 → END
-```
+### 🔹 sf_02_llm_based_workflows
+Sequential LLM workflow with model abstraction (Hugging Face and Ollama options).
 
-## 📁 Projects
+### 🔹 sf_03_prompt_chaining
+Multi-step content generation pipeline: outline -> blog draft -> evaluation.
 
-### 1️⃣ Simple Workflow - BMI Calculator
-
-**Path**: `sf_01_simple_workflow/`
-
-Calculates Body Mass Index and categorizes it.
-
-**Workflow**: `START → bmi_calculate → label_bmi → END`
-
-**Usage**:
-```python
-python main.py
-# Enter weight in kg: 70
-# Enter height in meters: 1.75
-```
-
-**Files**:
-- `bmi_calculate.py` - Calculate BMI = weight/(height²)
-- `label_bmi.py` - Categorize BMI (underweight, normal, overweight, obese)
-- `bmi_state_class.py` - Pydantic state model
-
----
-
-### 2️⃣ LLM-Based Workflow - Question & Answer
-
-**Path**: `sf_02_llm_based_workflows/`
-
-Simple LLM question answering system.
-
-**Workflow**: `START → llm_qa → END`
-
-**Usage**:
-```python
-python main.py
-# Uses Ollama or Hugging Face models
-```
-
-**Files**:
-- `llm_question_answer.py` - LLM invocation node
-- `model_ollama.py` - Ollama model configuration
-- `model_huggingface.py` - Hugging Face model configuration
-- `llm_state_class.py` - State schema
-
----
-
-### 3️⃣ Prompt Chaining - Blog Generator
-
-**Path**: `sf_03_prompt_chaining/`
-
-Generates complete blog posts using multi-step LLM prompting.
-
-**Workflow**: `START → generate_outline → generate_blog → evaluation → END`
-
-**Usage**:
-```bash
-streamlit run main.py
-```
-
-**Features**:
-- 📝 Generate blog outline from topic
-- ✍️ Write complete blog from outline
-- ⭐ Evaluate blog quality
-- 🎨 Streamlit web interface
-
-**Files**:
-- `generate_outline.py` - Create blog structure
-- `generate_blog.py` - Write full blog content
-- `evaluation.py` - Assess blog quality
-- `model.py` - LLM configuration
-
-## 🚀 Quick Start
-
-```bash
-# Navigate to desired workflow
-cd sf_01_simple_workflow/
-
-# Run the workflow
-python main.py
-```
-
-## 🎓 Key Concepts
-
-- **Sequential Execution**: Nodes run in fixed order
-- **State Management**: Passing data between nodes
-- **Prompt Chaining**: Breaking complex tasks into steps
-- **Graph Construction**: Using `add_edge()` for linear flows
-
-## 📦 Dependencies
-
-```bash
-pip install langgraph pydantic streamlit
-# For LLM workflows: langchain-ollama or langchain-huggingface
-```
-
-## 🔗 Workflow Pattern
-
-All workflows follow this pattern:
-```python
-from langgraph.graph import StateGraph, START, END
-
-graph = StateGraph(state_schema=YourState)
-graph.add_node('node1', function1)
-graph.add_node('node2', function2)
-
-graph.add_edge(START, 'node1')
-graph.add_edge('node1', 'node2')
-graph.add_edge('node2', END)
-
-workflow = graph.compile()
-result = workflow.invoke(input_state)
-```
-
----
-
-**Part of**: LangGraph Course  
-**Module**: Sequential Workflows
+## 🚀 Suggested Learning Path
+1. Start with sf_01 to understand state and linear node execution.
+2. Move to sf_02 to plug in LLM calls in the same pattern.
+3. Finish with sf_03 to learn prompt chaining and output evaluation.

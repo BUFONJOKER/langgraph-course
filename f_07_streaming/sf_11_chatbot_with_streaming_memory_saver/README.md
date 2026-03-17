@@ -1,19 +1,13 @@
-# 💬 Streaming Chatbot with Memory Saver
+# 🌊 SF 11: Streaming Chatbot
 
-## 🎯 Overview
-A Streamlit chatbot using LangGraph with in-memory checkpointing and token streaming.
+## 📌 What This Does
+Streams chatbot responses while preserving short-term state with memory saver.
 
-## 🔁 Workflow
-`START -> chat -> END`
+## 🧠 Key Concept
+Token/event streaming with persistent state.
 
-## 🗂️ Files
-### 🚀 App & Flow
-- `main.py`: Streamlit UI, chat history rendering, user input handling, and streaming assistant output.
-- `workflow.py`: creates and compiles the graph with `InMemorySaver`.
-
-### 🧩 Node
-- `chat.py`: prompt + message history -> LLM response.
-
-### 🤖 Model & State
-- `model.py`: loads `ChatOllama` (`qwen3.5:cloud`).
-- `state_schema.py`: `ChatState` with `model` and aggregated `messages`.
+## 📂 Main Files
+- workflow.py
+- chat.py
+- state_schema.py
+- main.py
