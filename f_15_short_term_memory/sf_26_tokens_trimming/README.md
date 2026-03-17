@@ -1,1 +1,13 @@
-{ _ble_edit_exec_gexec__save_lastarg "$@"; } 4>&1 5>&2 &>/dev/null
+# 🧪 SF_26_TOKENS_TRIMMING: Tokens Trimming
+
+## Summary
+Implements the Tokens Trimming sub-workflow for memory/token optimization.
+
+
+## 📌 Overview
+Short example module for Tokens Trimming.
+
+## 📂 File-by-File Explanation
+- `__init__.py`: Marks this directory as a Python package for imports.
+- `main.ipynb`: Notebook walkthrough for interactive experimentation.
+- `main.py`: Primary entry script to run this workflow example.

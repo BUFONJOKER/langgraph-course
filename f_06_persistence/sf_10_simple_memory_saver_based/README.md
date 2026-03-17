@@ -1,13 +1,17 @@
-# 💾 SF 10: Memory Saver Persistence
+# 🧪 SF_10_SIMPLE_MEMORY_SAVER_BASED: Simple Memory Saver Based
 
-## 📌 What This Does
-Demonstrates checkpointed workflow execution using memory saver.
+## Summary
+Implements the Simple Memory Saver Based sub-workflow for persistence and state continuity.
 
-## 🧠 Key Concept
-Persisting state between turns/runs.
 
-## 📂 Main Files
-- generate_joke.py
-- generate_joke_explanation.py
-- state_schema.py
-- main.py
+## 📌 Overview
+Short example module for Simple Memory Saver Based.
+
+## 📂 File-by-File Explanation
+- `__init__.py`: Marks this directory as a Python package for imports.
+- `generate_joke.py`: Generates a joke prompt/response in persistence demo.
+- `generate_joke_explanation.py`: Produces explanation for the generated joke.
+- `main.ipynb`: Notebook walkthrough for interactive experimentation.
+- `main.py`: Primary entry script to run this workflow example.
+- `model.py`: Configures and initializes the model used in this workflow.
+- `state_schema.py`: Defines the workflow state structure passed between nodes.

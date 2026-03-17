@@ -1,13 +1,16 @@
-# 🌊 SF 11: Streaming Chatbot
+# 🧪 SF_11_CHATBOT_WITH_STREAMING_MEMORY_SAVER: Chatbot With Streaming Memory Saver
 
-## 📌 What This Does
-Streams chatbot responses while preserving short-term state with memory saver.
+## Summary
+Implements the Chatbot With Streaming Memory Saver sub-workflow for streaming responses.
 
-## 🧠 Key Concept
-Token/event streaming with persistent state.
 
-## 📂 Main Files
-- workflow.py
-- chat.py
-- state_schema.py
-- main.py
+## 📌 Overview
+Short example module for Chatbot With Streaming Memory Saver.
+
+## 📂 File-by-File Explanation
+- `__init__.py`: Marks this directory as a Python package for imports.
+- `chat.py`: Implements chat handling logic for message flow.
+- `main.py`: Primary entry script to run this workflow example.
+- `model.py`: Configures and initializes the model used in this workflow.
+- `state_schema.py`: Defines the workflow state structure passed between nodes.
+- `workflow.py`: Builds and wires the LangGraph workflow execution path.

@@ -1,14 +1,17 @@
-# 🤖 SF 02: LLM-Based Sequential Workflow
+# 🧪 SF_02_LLM_BASED_WORKFLOWS: Llm Based Workflows
 
-## 📌 What This Does
-Runs a step-by-step LLM question-answer flow using interchangeable model backends.
+## Summary
+Implements the Llm Based Workflows sub-workflow for sequential graph execution.
 
-## 🧠 Key Concept
-Deterministic graph order with LLM inference nodes.
 
-## 📂 Main Files
-- llm_question_answer.py
-- llm_state_class.py
-- model_huggingface.py
-- model_ollama.py
-- main.py
+## 📌 Overview
+Short example module for Llm Based Workflows.
+
+## 📂 File-by-File Explanation
+- `__init__.py`: Marks this directory as a Python package for imports.
+- `llm_question_answer.py`: Runs question-answer generation through the selected LLM.
+- `llm_state_class.py`: Defines the workflow state structure passed between nodes.
+- `main.ipynb`: Notebook walkthrough for interactive experimentation.
+- `main.py`: Primary entry script to run this workflow example.
+- `model_huggingface.py`: Configures the Hugging Face model backend.
+- `model_ollama.py`: Configures the Ollama model backend.

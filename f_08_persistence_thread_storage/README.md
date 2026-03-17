@@ -1,8 +1,15 @@
-# 8️⃣ Persistence With Thread Storage
+# 8️⃣ Persistence Thread Storage
 
-## 🎯 Concept
-This module extends persistence with thread IDs, enabling multiple independent conversations to be stored and resumed safely.
+## Summary
+Combines persistence with thread-based storage for multi-conversation support.
 
-## 🧠 What You Learn
-- How thread-based isolation works for chat sessions.
-{ _ble_edit_exec_gexec__save_lastarg "$@"; } 4>&1 5>&2 &>/dev/null
+
+## 🎯 Overview
+Persistence with thread storage for multi-conversation management.
+
+## 📂 File-by-File Explanation
+- `__init__.py`: Marks this directory as a Python package for imports.
+
+## 🧩 Subfolders
+- `sf_12_chatbot_resume_feature`: Chatbot Resume Feature example module.
+- `sf_13_chatbot_sqlite_checkpoint`: Chatbot Sqlite Checkpoint example module.

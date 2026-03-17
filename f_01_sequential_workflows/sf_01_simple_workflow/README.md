@@ -1,13 +1,15 @@
-# ⚖️ SF 01: Simple Workflow (BMI)
+# 🧪 SF_01_SIMPLE_WORKFLOW: Simple Workflow
 
-## 📌 What This Does
-Implements a linear workflow that computes BMI from inputs and maps the numeric result to a health label.
+## Summary
+Implements the Simple Workflow sub-workflow for sequential graph execution.
 
-## 🧠 Key Concept
-Sequential node execution with explicit state passing.
 
-## 📂 Main Files
-- bmi_calculate.py
-- label_bmi.py
-- bmi_state_class.py
-- main.py
+## 📌 Overview
+Short example module for Simple Workflow.
+
+## 📂 File-by-File Explanation
+- `bmi_calculate.py`: Computes BMI from height/weight values.
+- `bmi_state_class.py`: Defines the workflow state structure passed between nodes.
+- `graph.png`: Graph visualization of workflow node/edge structure.
+- `label_bmi.py`: Maps BMI values to health-category labels.
+- `main.py`: Primary entry script to run this workflow example.

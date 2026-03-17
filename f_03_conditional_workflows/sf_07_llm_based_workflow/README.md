@@ -1,14 +1,22 @@
-# 🧭 SF 07: Conditional LLM Workflow
+# 🧪 SF_07_LLM_BASED_WORKFLOW: Llm Based Workflow
 
-## 📌 What This Does
-Classifies sentiment/diagnosis style outputs and routes to response branches.
+## Summary
+Implements the Llm Based Workflow sub-workflow for conditional routing behavior.
 
-## 🧠 Key Concept
-LLM output used as routing signal.
 
-## 📂 Main Files
-- find_sentiment.py
-- check_sentiment.py
-- positive_response.py
-- negative_response.py
-- main.py
+## 📌 Overview
+Short example module for Llm Based Workflow.
+
+## 📂 File-by-File Explanation
+- `__init__.py`: Marks this directory as a Python package for imports.
+- `check_sentiment.py`: Routes flow based on detected sentiment class.
+- `diagonsis_output_schema.py`: Structured schema for diagnosis stage output.
+- `find_sentiment.py`: Infers sentiment from review/input text.
+- `main.ipynb`: Notebook walkthrough for interactive experimentation.
+- `main.py`: Primary entry script to run this workflow example.
+- `model.py`: Configures and initializes the model used in this workflow.
+- `negative_response.py`: Generates branch-specific response for negative sentiment.
+- `output_schema.py`: Structured output schema for primary workflow response.
+- `positive_response.py`: Generates branch-specific response for positive sentiment.
+- `review_state_schema.py`: Defines the workflow state structure passed between nodes.
+- `run_diagnosis.py`: Runs diagnosis step used in conditional LLM workflow.

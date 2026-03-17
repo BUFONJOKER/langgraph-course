@@ -1,14 +1,20 @@
-# 🧵 SF 12: Chatbot Resume Feature
+# 🧪 SF_12_CHATBOT_RESUME_FEATURE: Chatbot Resume Feature
 
-## 📌 What This Does
-Supports thread-based chat continuation, reset, and conversation reload.
+## Summary
+Implements the Chatbot Resume Feature sub-workflow for thread-aware persistence.
 
-## 🧠 Key Concept
-Thread ID driven session persistence.
 
-## 📂 Main Files
-- add_thread.py
-- load_conversation.py
-- reset_chat.py
-- workflow.py
-- main.py
+## 📌 Overview
+Short example module for Chatbot Resume Feature.
+
+## 📂 File-by-File Explanation
+- `__init__.py`: Marks this directory as a Python package for imports.
+- `add_thread.py`: Adds/manages thread identifiers for conversation continuity.
+- `chat.py`: Implements chat handling logic for message flow.
+- `load_conversation.py`: Loads saved conversation history for resume behavior.
+- `main.py`: Primary entry script to run this workflow example.
+- `model.py`: Configures and initializes the model used in this workflow.
+- `reset_chat.py`: Resets chat state to start a fresh conversation.
+- `state_schema.py`: Defines the workflow state structure passed between nodes.
+- `thread_id.py`: Stores/helpers for current thread identifier handling.
+- `workflow.py`: Builds and wires the LangGraph workflow execution path.

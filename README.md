@@ -1,5 +1,9 @@
 # 🚀 LangGraph Course
 
+## Summary
+Overview of the LangGraph course repository, module structure, and learning path.
+
+
 Welcome to the LangGraph Course repository! This project explores sequential workflows and advanced orchestration using LangGraph framework.
 
 ---
