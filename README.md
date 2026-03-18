@@ -94,24 +94,58 @@ Each module and submodule has its own `README.md` with:
 ## ⚙️ Setup
 
 ### Prerequisites
+- **Python 3.11**
+- **uv** installed (`curl -LsSf https://astral.sh/uv/install.sh | sh`)
+- **WSL2/Ubuntu** environment (recommended)
 
-- Python 3.10+ (recommended)
-- `uv` installed
-- API/model credentials as needed by your selected examples
+### 🔐 Environment Configuration
+Create a `.env` file in the root directory. You will need the following credentials:
 
-### Install Dependencies (uv)
+#### 1. Hugging Face (`HUGGINGFACEHUB_API_TOKEN`)
+*Used for model inference and downloading weights.*
+* **How to get it:** Go to [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) -> **New Token** -> Select **Read** role -> Copy the `hf_...` string.
 
+#### 2. LangSmith (`LANGSMITH_API_KEY`)
+*Essential for tracing and debugging your LangGraph nodes.*
+* **How to get it:** Log in to [smith.langchain.com](https://smith.langchain.com) -> **Settings** (bottom left) -> **API Keys** -> **Create API Key**.
+
+#### 3. Alpha Vantage (`STOCK_API_KEY`)
+*Used in tool-calling examples for financial data.*
+* **How to get it:** Visit [alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key) -> Enter your email -> Claim your free key instantly.
+
+#### 4. Horizon Token (`HORIZON_TOKEN`)
+*Used for specific enterprise integration modules.*
+* **How to get it:** Log into your [Omnissa/VMware Horizon Console](https://connect.omnissa.com) -> **Profile** -> **API Tokens** -> **Generate**.
+
+**Example `.env` file:**
 ```bash
-uv sync
+HUGGINGFACEHUB_API_TOKEN=hf_your_token_here
+LANGSMITH_TRACING=true
+LANGSMITH_API_KEY=lsv2_pt_your_key_here
+LANGSMITH_ENDPOINT=https://api.smith.langchain.com
+LANGSMITH_PROJECT=chatbot-langraph
+STOCK_API_KEY=your_alpha_vantage_key
+HORIZON_TOKEN=your_horizon_token
 ```
 
-### Run Commands With uv
-
-Use `uv run` so commands execute in the project environment without manual activation.
-
+### Clone and Initialize
 ```bash
-uv run python --version
-uv run python main.py
+git clone https://github.com/BUFONJOKER/langgraph-course.git
+cd langgraph-course
+```
+
+### Initialize the project
+``` bash
+uv init
+```
+### create a virtual environment
+``` bash
+uv venv
+```
+
+### Install Dependencies
+```bash
+uv sync
 ```
 
 ## ▶️ How To Run Examples
@@ -121,12 +155,6 @@ Run any module or submodule script directly:
 ```bash
 uv run python f_01_sequential_workflows/sf_01_simple_workflow/main.py
 uv run python f_12_rag/sf_18_simple_chatbot_with_rag/main.py
-```
-
-Open notebooks for interactive experimentation:
-
-```bash
-uv run jupyter notebook
 ```
 
 ## 🧠 Core Concepts Implemented
